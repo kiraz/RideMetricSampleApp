@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RideMetricSdkSample</string>
+    <string name="hello_world">RideMetric software now runs in the background. You can start adding your functionality!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
