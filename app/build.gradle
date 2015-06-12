@@ -9,22 +9,10 @@ android {
         minSdkVersion 10
         targetSdkVersion 21
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-        }
-        buildScreens {
-            //
-        }
-    }
 }
 
 repositories {
-    maven {
-        url "https://github.com/kiraz/motionLibRepo/raw/master/repository"
-    }
+    maven { url "C:/Users/shelly/AndroidStudioProjects/ridemetricPublicRepo/repository" }
 }
 
 dependencies {
