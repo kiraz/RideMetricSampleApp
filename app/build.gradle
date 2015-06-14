@@ -12,7 +12,7 @@ android {
 }
 
 repositories {
-    maven { url "C:/Users/shelly/AndroidStudioProjects/ridemetricPublicRepo/repository" }
+    maven { url "https://github.com/kiraz/ridemetricPublicRepo/raw/master/repository" }
 }
 
 dependencies {
