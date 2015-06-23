@@ -11,8 +11,7 @@ public class MainActivity extends ActionBarActivity {
 
     String applicationSerialNumber;
 
-    CustomIf.TripListener rideMetricListener;
-    CustomIf.RegisterListener rideMetricRegisterCallback;
+    CustomIf.RegisterListener registerListener;
     private CustomIf.TripListener tripListener;
 
     @Override
@@ -38,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
         };
 
 
-        rideMetricRegisterCallback = new CustomIf.RegisterListener() {
+        registerListener = new CustomIf.RegisterListener() {
 
             // TODO hide registering progress bar
 
@@ -53,8 +52,8 @@ public class MainActivity extends ActionBarActivity {
 
         if (!CustomIf.registerUser(
                 this,
-                rideMetricListener, // can be null
-                rideMetricRegisterCallback // can not be null
+                tripListener, // can be null
+                registerListener // can not be null
         )
                 ) {
             return;

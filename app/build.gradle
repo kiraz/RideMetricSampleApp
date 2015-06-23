@@ -9,9 +9,25 @@ android {
         minSdkVersion 10
         targetSdkVersion 21
     }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+
+        debugScreen {
+            minifyEnabled false
+            debuggable true
+        }
+
+        dubug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
 }
 
 repositories {
+
     maven { url "C:/Users/shelly/AndroidStudioProjects/ridemetricPublicRepo/repository" }
     maven { url "C:/Users/shelly/AndroidStudioProjects/ridemetricPrivateRepo/repository"}
     maven { url "C:/Users/shelly/AndroidStudioProjects/privateRepoMotionLib/repository" }
