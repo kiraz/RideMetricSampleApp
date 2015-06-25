@@ -8,7 +8,10 @@ android {
         applicationId "com.example.ridemetricsdksample"
         minSdkVersion 10
         targetSdkVersion 21
+        versionCode 2
+        versionName "1.2"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -38,6 +41,6 @@ repositories {
 dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.ridemetric:ridemetric-controlsdk-debug:1.0.4'
+    compile 'com.ridemetric:ridemetric-controlsdk-debug:1.0.5'
 }
 
