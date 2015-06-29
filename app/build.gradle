@@ -4,6 +4,8 @@ android {
     compileSdkVersion 21
     buildToolsVersion "22.0.1"
 
+    //enforceUniquePackageName = false
+
     defaultConfig {
         applicationId "com.example.ridemetricsdksample"
         minSdkVersion 10
@@ -12,12 +14,15 @@ android {
 }
 
 repositories {
-    maven { url "https://github.com/kiraz/ridemetricPublicRepo/raw/master/repository" }
+    maven { url "C:/Freelance/Zarick/ridemetricPrivateRepo/repository" }
+    maven { url "C:/Freelance/Zarick/ridemetricPublicRepo/repository" }
+    //maven { url "https://github.com/kiraz/ridemetricPublicRepo/raw/master/repository" }
+    maven { url "https://github.com/lirik16/microlog4android/raw/master/repository" }
 }
 
 dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.ridemetric:ridemetric-controlsdk:1.0.0'
+    compile 'com.ridemetric:ridemetric-controlsdk-debugScreen:1.0.4'
 }
 

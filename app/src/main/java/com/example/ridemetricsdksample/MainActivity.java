@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import com.ridemetric.sdk.RideMetricSdk;
 import com.ridemetric.sdk.RideMetricSdk.RegisterCallback;
+import com.ridemetric.view.R;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -21,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_sample_app);
 		
 		
 		/*****************************************************************
@@ -72,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.sample_app_menu, menu);
 		return true;
 	}
 
