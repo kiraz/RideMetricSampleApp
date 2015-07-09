@@ -12,6 +12,8 @@ android {
         versionName "1.2"
     }
 
+    //enforceUniquePackageName = false
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,15 +34,16 @@ android {
 repositories {
 
     maven { url "C:/Users/shelly/AndroidStudioProjects/ridemetricPublicRepo/repository" }
-    maven { url "C:/Users/shelly/AndroidStudioProjects/ridemetricPrivateRepo/repository"}
-    maven { url "C:/Users/shelly/AndroidStudioProjects/privateRepoMotionLib/repository" }
+    //maven { url "C:/Users/shelly/AndroidStudioProjects/ridemetricPrivateRepo/repository"}
+    //maven { url "C:/Users/shelly/AndroidStudioProjects/privateRepoMotionLib/repository" }
 
-    maven { url "https://github.com/kiraz/ridemetricPublicRepo/raw/master/repository" }
+    //maven { url "https://github.com/kiraz/ridemetricPublicRepo/raw/master/repository" }
 }
 
 dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.ridemetric:ridemetric-controlsdk-debug:1.0.5'
+    //compile 'com.ridemetric:ridemetric-controlsdk-debug:1.2.8'
+    compile 'com.ridemetric:ridemetric-controlsdk:1.2.8'
 }
 

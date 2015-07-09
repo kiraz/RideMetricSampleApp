@@ -2,7 +2,7 @@ package com.example.ridemetricsdksample;
 
 import android.app.Application;
 
-import com.ridemetric.sdk.SdkInit;
+import com.ridemetric.sdk.RideMetricSDKconfig;
 
 /**
  * Created by shelly on 6/20/2015.
@@ -15,6 +15,6 @@ public class CustomApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        SdkInit.sampleApp(this, rideMetricSdkKey, true);
+        RideMetricSDKconfig.initApp(this, rideMetricSdkKey, true);
     }
 }

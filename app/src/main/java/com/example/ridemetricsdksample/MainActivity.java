@@ -5,14 +5,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.ridemetric.sdk.CustomIf;
+import com.ridemetric.sdk.RideMetric;
 
 public class MainActivity extends ActionBarActivity {
 
-    String applicationSerialNumber;
-
-    CustomIf.RegisterListener registerListener;
-    private CustomIf.TripListener tripListener;
+    RideMetric.RegisterListener registerListener;
+    private RideMetric.TripListener tripListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
          * Start RideMetric specific code
          *****************************************************************/
 
-        tripListener = new CustomIf.TripListener() {
+        tripListener = new RideMetric.TripListener() {
             @Override
             public void onTripStarted() {
                 // TODO set text "driving"
@@ -37,25 +35,23 @@ public class MainActivity extends ActionBarActivity {
         };
 
 
-        registerListener = new CustomIf.RegisterListener() {
+        registerListener = new RideMetric.RegisterListener() {
 
             // TODO hide registering progress bar
 
             @Override
-            public void onRegisterComplete(String applicationNumber) {
-                // TODO Auto-generated method stub
-                applicationSerialNumber = applicationNumber;
+            public void onRegisterComplete(String driverId) {
+                // TODO you can pass the driverId to your web application that uses RideMetric REST API
             }
         };
 
         // TODO show registering progress bar
 
-        if (!CustomIf.registerUser(
+        if (!RideMetric.registerUser(
                 this,
                 tripListener, // can be null
                 registerListener // can not be null
-        )
-                ) {
+                )) {
             return;
         }
 
