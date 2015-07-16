@@ -8,6 +8,9 @@ import android.view.MenuItem;
 import com.ridemetric.sdk.RideMetric;
 import com.ridemetric.view.R;
 
+//commented because otherwise can not find activity_sampel_app
+//import com.ridemetric.view.R;
+
 public class MainActivity extends ActionBarActivity {
 
     RideMetric.RegisterListener registerListener;
