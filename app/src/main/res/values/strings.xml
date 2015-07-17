@@ -2,7 +2,7 @@
 <resources>
 
     <string name="sample_app_name">RideMetricSdkSample</string>
-    <!-- <string name="hello_world">RideMetric software now runs in the background. You can start adding your functionality!</string> -->
+    <string name="sample_app_greeting">RideMetric SDK software now runs in the background. You can start adding your functionality!</string>
     <!-- <string name="action_settings">Settings</string> -->
 
 </resources>

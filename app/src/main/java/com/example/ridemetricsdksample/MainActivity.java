@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ridemetric.sdk.RideMetric;
+import com.ridemetric.view.R;
 
 public class MainActivity extends ActionBarActivity {
 
