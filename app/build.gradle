@@ -11,15 +11,27 @@ android {
         versionCode 2
         versionName "1.2"
     }
-}
 
+    buildTypes {
+        release {
+            //has to be totally obfuscated
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+}
 repositories {
+    maven { url "${System.env.RIDEMETRIC_LOCAL_REPO_HOME}/ridemetricPublicRepo/repository" }
     maven { url "https://github.com/kiraz/ridemetricPublicRepo/raw/master/repository" }
 }
 
 dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.ridemetric:ridemetric-controlsdk:1.2.8'
+    compile 'com.ridemetric:ridemetric-controlsdk:1.2.9'
+
 }
 

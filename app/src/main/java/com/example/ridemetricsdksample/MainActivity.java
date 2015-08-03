@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.ridemetric.sdk.RideMetric;
 import com.ridemetric.view.R;
@@ -42,10 +43,10 @@ public class MainActivity extends ActionBarActivity {
         registerListener = new RideMetric.RegisterListener() {
 
             // TODO hide registering progress bar
-
             @Override
             public void onRegisterComplete(String driverId) {
-                // TODO you can pass the driverId to your web application that uses RideMetric REST API
+                Toast.makeText(MainActivity.this, "onRegisterComplete driverId = " + driverId,
+                        Toast.LENGTH_LONG).show();
             }
         };
 
