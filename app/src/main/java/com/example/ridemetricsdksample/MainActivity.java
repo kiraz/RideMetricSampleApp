@@ -50,11 +50,11 @@ public class MainActivity extends ActionBarActivity {
                         Toast.LENGTH_LONG).show();
             }
 
-            @Override
-            public void onError(final RidemetricError error) {
-                Toast.makeText(MainActivity.this, "Error: " + error.getMessage(),
-                        Toast.LENGTH_LONG).show();
-            }
+//            @Override
+//            public void onError(final RidemetricError error) {
+//                Toast.makeText(MainActivity.this, "Error: " + error.getMessage(),
+//                        Toast.LENGTH_LONG).show();
+//            }
         };
 
         // TODO show registering progress bar
