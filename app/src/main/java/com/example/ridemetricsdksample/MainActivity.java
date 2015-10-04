@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.ridemetric.sdk.RideMetric;
+import com.ridemetric.sdk.RidemetricError;
 import com.ridemetric.view.R;
 
 //commented because otherwise can not find activity_sampel_app
@@ -46,6 +47,12 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onRegisterComplete(String driverId) {
                 Toast.makeText(MainActivity.this, "onRegisterComplete driverId = " + driverId,
+                        Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onError(final RidemetricError error) {
+                Toast.makeText(MainActivity.this, "Error: " + error.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
         };
