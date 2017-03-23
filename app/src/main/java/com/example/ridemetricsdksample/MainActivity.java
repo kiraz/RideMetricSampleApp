@@ -66,12 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             @Override
-            public void onTripEvent(String json) {
-                stringFile.write(String.format(Locale.getDefault(), "Trip event:%s \n", json));
-                Log.d(TAG, String.format(Locale.getDefault(), "Trip event:%s \n", json));
-            }
-
-            @Override
             public void onTripScore(ScoringInfo scoringInfo) {
                 updateScores(scoringInfo);
             }
