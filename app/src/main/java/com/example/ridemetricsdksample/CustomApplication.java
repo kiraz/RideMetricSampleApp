@@ -4,17 +4,15 @@ import android.app.Application;
 
 import com.ridemetric.sdk.RideMetricSDKconfig;
 
-/**
- * Created by shelly on 6/20/2015.
- */
 public class CustomApplication extends Application {
+    //rideMetricSdkKey should be retrieved from ridemetric licensing site
 
-    //rideMetricSdkKey retrieved from ridemetric licensing site
-    static final private String rideMetricSdkKey = "RetrieveFromGenerateSdkKeySite";
+    //license enabling start stop of the trip and disabling auto detection
+    static final private String rideMetricSdkKey = "YOUR-RIDEMETRIC-SDK-KEY";
 
     @Override
     public void onCreate() {
         super.onCreate();
-        RideMetricSDKconfig.initApp(this, rideMetricSdkKey, true);
+        RideMetricSDKconfig.initApp(this, rideMetricSdkKey);
     }
 }
