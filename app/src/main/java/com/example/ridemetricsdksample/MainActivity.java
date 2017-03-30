@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,11 +19,6 @@ import com.ridemetric.view.events.ScoringInfo;
 
 import java.io.IOException;
 import java.util.Locale;
-
-//import com.ridemetric.sdk.RidemetricError;
-
-//commented because otherwise can not find activity_sampel_app
-//import com.ridemetric.view.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -84,6 +80,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             @Override
+            public void onStopped() {
+
+            }
+
+            @Override
             public void onError(RidemetricError error) {
                 if (error instanceof RideMetricSignupError) {
                     driverIdView.setText("Response from web server was not successful");
@@ -105,6 +106,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_unregister).setOnClickListener(this);
         findViewById(R.id.button_start).setOnClickListener(this);
         findViewById(R.id.button_stop).setOnClickListener(this);
+
+        maxSpeedView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    try {
+                        Integer value = Integer.valueOf(maxSpeedView.getText().toString());
+                        RideMetric.setMaxPermittedSpeed(MainActivity.this, value);
+                    } catch (NumberFormatException t) {
+                        Log.e(TAG, "Number format error", t);
+                    }
+                }
+                return false;
+            }
+        });
 
         updateUI();
 
@@ -128,13 +144,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             if (id == R.id.button_register) {
                 if (!isRegistered()) {
-                    int speed = 90;
-                    try {
-                        speed = Integer.valueOf(maxSpeedView.getText().toString());
-                    } catch (NumberFormatException t) {
-                        Log.e(TAG, "Error", t);
-                    }
-                    RideMetric.setMaxPermittedSpeed(speed);
                     RideMetric.connect(
                             this,
                             tripListener,
@@ -218,5 +227,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
         pref.edit().putBoolean("registered", registered).apply();
     }
-
 }
