@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.ridemetric.sdk.DriverRegistrationInfo;
 import com.ridemetric.sdk.RideMetric;
+import com.ridemetric.sdk.RideMetricSDKconfig;
 import com.ridemetric.sdk.RidemetricError;
 import com.ridemetric.view.events.ScoringInfo;
 
@@ -23,6 +24,7 @@ public class SampleService extends Service implements RideMetric.ConnectionListe
     @Override
     public void onCreate() {
         super.onCreate();
+        RideMetricSDKconfig.initApp(getApplication(), CustomApplication.rideMetricSdkKey);
     }
 
     @Override
