@@ -23,16 +23,14 @@ android {
 }
 
 repositories {
-    maven { url "${System.env.RIDEMETRIC_LOCAL_REPO_HOME}/ridemetricPublicRepo/repository" }
-    maven { url "${System.env.RIDEMETRIC_LOCAL_REPO_HOME}/ridemetricPrivateRepo/repository" }
     maven { url "https://github.com/ridemetric/ridemetricPublicRepo/raw/master/repository" }
 }
 
 dependencies {
     compile 'com.android.support:support-v4:22.0.3'
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.google.android.gms:play-services-base:10.0.0'
-    compile 'com.google.android.gms:play-services-maps:10.0.0'
-    compile 'com.ridemetric:ridemetric-controlsdk:4.1.30'
+    compile 'com.google.android.gms:play-services-base:8.4.0'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.ridemetric:ridemetric-controlsdk:4.1.32'
 }
 

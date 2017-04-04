@@ -10,7 +10,7 @@ public class CustomApplication extends Application {
 
     //license enabling start stop of the trip and disabling auto detection
     static final private String rideMetricSdkKey = "YOUR-RIDEMETRIC-SDK-KEY";
-    static boolean USE_SERVICE = true;
+    static boolean USE_SERVICE = false;
 
     @Override
     public void onCreate() {
