@@ -11,7 +11,7 @@ Version 2.1.27
 ## Instalation
 RideMetric SDK is installed as Gradle plugin.
 ```
-compile 'com.ridemetric:ridemetric-controlsdk:2.1.27'
+compile 'com.ridemetric:ridemetric-controlsdk:2.1.30'
 ```
 
 ## API Reference

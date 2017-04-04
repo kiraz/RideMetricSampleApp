@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (CustomApplication.USE_SERVICE) {
+            return;
+        }
+
         setContentView(R.layout.activity_sample_app);
 
         stringFile = new StringFile("test_sample_app.txt");
