@@ -19,6 +19,7 @@ import com.ridemetric.view.events.ScoringInfo;
 
 import java.io.IOException;
 import java.util.Locale;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 stringFile.write("TRIP ENDED \n");
                 Log.d(TAG, "TRIP ENDED");
                 updateUI();
+                Log.d(TAG, "Trip referenceId: " + RideMetric.getReferenceId());
             }
 
             @Override
@@ -152,7 +154,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     findViewById(R.id.progressbar).setVisibility(View.VISIBLE);
                 }
             } else if (id == R.id.button_start) {
-                RideMetric.startTrip();
+                String referenceId = UUID.randomUUID().toString();
+                RideMetric.startTrip(referenceId);
                 clearScores();
             } else if (id == R.id.button_stop) {
                 RideMetric.stopTrip();
