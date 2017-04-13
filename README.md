@@ -3,6 +3,9 @@ This is a sample app uses RideMetric SDK and can be expanded to include specific
 
 # RideMetric SDK
 ## Changelog
+Version 4.1.39
+* Faster invocation of connect listeners upon completion of connect procedure
+
 Version 4.1.38
 * Added a method getReferenceId providing a reference if of the latest started trip and reduced the latency of connect method
 
@@ -20,7 +23,7 @@ Version 4.1.27
 ## Instalation
 RideMetric SDK is installed as Gradle plugin.
 ```
-compile 'com.ridemetric:ridemetric-controlsdk:4.1.38'
+compile 'com.ridemetric:ridemetric-controlsdk:4.1.39'
 ```
 
 ## API Reference
