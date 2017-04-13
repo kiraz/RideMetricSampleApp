@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_app);
+        setTitle(String.format(Locale.getDefault(), "%s-SDK v.%s", getString(R.string.sample_app_name), RideMetric.getVersion()));
 
         stringFile = new StringFile("test_sample_app.txt");
         try {

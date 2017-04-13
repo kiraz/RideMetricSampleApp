@@ -3,6 +3,9 @@ This is a sample app uses RideMetric SDK and can be expanded to include specific
 
 # RideMetric SDK
 ## Changelog
+Version 4.1.43
+* Minor bug fixes
+
 Version 4.1.40
 * Minor bug fixes
 
@@ -26,7 +29,7 @@ Version 4.1.27
 ## Instalation
 RideMetric SDK is installed as Gradle plugin.
 ```
-compile 'com.ridemetric:ridemetric-controlsdk:4.1.40'
+compile 'com.ridemetric:ridemetric-controlsdk:4.1.43'
 ```
 
 ## API Reference
