@@ -1,7 +1,5 @@
 package com.example.ridemetricsdksample;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -74,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         connectionListener = new RideMetric.ConnectionListener() {
             @Override
             public void onConnected(DriverRegistrationInfo driverRegistrationInfo) {
-                setRegistered(true);
                 updateIdTexts(driverRegistrationInfo);
                 updateUI();
 
@@ -84,7 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onStopped() {
-
+                driverIdView.setText("Driver ID");
+                pinIdView.setText("Pin ID");
+                updateUI();
             }
 
             @Override
@@ -95,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else {
                     driverIdView.setText(String.format("Error: %s", error.getLocalizedMessage()));
                 }
+                updateUI();
             }
         };
 
@@ -109,6 +109,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_unregister).setOnClickListener(this);
         findViewById(R.id.button_start).setOnClickListener(this);
         findViewById(R.id.button_stop).setOnClickListener(this);
+
+        updateUI();
 
         maxSpeedView.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -125,9 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        updateUI();
-
-        if (isRegistered()) {
+        if (RideMetric.isConnected()) {
             try {
                 RideMetric.connect(this, tripListener, connectionListener);
             } catch (RidemetricError ridemetricError) {
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = view.getId();
         try {
             if (id == R.id.button_register) {
-                if (!isRegistered()) {
+                if (!RideMetric.isConnected()) {
                     RideMetric.connect(
                             this,
                             tripListener,
@@ -166,7 +166,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     return;
                 }
                 RideMetric.stopService(this);
-                setRegistered(false);
                 driverIdView.setText("Driver ID");
                 pinIdView.setText("Pin ID");
             }
@@ -177,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateUI() {
-        if (isRegistered()) {
+        if (RideMetric.isConnected()) {
             findViewById(R.id.button_register).setEnabled(false);
             findViewById(R.id.button_unregister).setEnabled(true);
             findViewById(R.id.progressbar).setVisibility(View.INVISIBLE);
@@ -220,15 +219,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setTextViewContent(int id, String text) {
         TextView tv = (TextView) findViewById(id);
         if (tv != null) tv.setText(text);
-    }
-
-    private boolean isRegistered() {
-        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
-        return pref.getBoolean("registered", false);
-    }
-
-    private void setRegistered(boolean registered) {
-        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
-        pref.edit().putBoolean("registered", registered).apply();
     }
 }
