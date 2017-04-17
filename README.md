@@ -4,7 +4,7 @@ This is a sample app uses RideMetric SDK and can be expanded to include specific
 # RideMetric SDK
 ## Changelog
 Version 4.1.45
-* Purge policy
+* Purge policy update
 
 Version 4.1.43
 * Minor bug fixes
