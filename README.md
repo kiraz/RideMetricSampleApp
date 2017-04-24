@@ -3,8 +3,19 @@ This is a sample app uses RideMetric SDK and can be expanded to include specific
 
 # RideMetric SDK
 ## Changelog
+Version 4.1.48
+* Improved scoring
+* Extended purging policy - deleting the trip after synchronizing it with the cloud server
+* Fixed referenceId recording
+* Removed log messages
+* Expedited completion of stopTrip method when GPS is not available
+* Added referenceId for the unifinished trips (e.g. trips interrupted by the phone reboot)
+
+Version 4.1.46
+* Debug version
+
 Version 4.1.45
-* Purge policy
+* Purge policy update
 
 Version 4.1.43
 * Minor bug fixes
@@ -32,7 +43,7 @@ Version 4.1.27
 ## Instalation
 RideMetric SDK is installed as Gradle plugin.
 ```
-compile 'com.ridemetric:ridemetric-controlsdk:4.1.45'
+compile 'com.ridemetric:ridemetric-controlsdk:4.1.46'
 ```
 
 ## API Reference
