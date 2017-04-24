@@ -3,6 +3,14 @@ This is a sample app uses RideMetric SDK and can be expanded to include specific
 
 # RideMetric SDK
 ## Changelog
+Version 4.1.48
+* Improved scoring
+* Extended purging policy - deleting the trip after synchronizing it with the cloud server
+* Fixed referenceId recording
+* Removed log messages
+* Expedited completion of stopTrip method when GPS is not available
+* Added referenceId for the unifinished trips (e.g. trips interrupted by the phone reboot)
+
 Version 4.1.46
 * Debug version
 
