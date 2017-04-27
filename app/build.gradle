@@ -29,6 +29,6 @@ repositories {
 dependencies {
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile ('com.google.android.gms:play-services-maps:8.4.0') { exclude module: 'support-v4' }
-    compile ('com.ridemetric:ridemetric-controlsdk:4.1.48') { exclude module: 'support-v4' }
+    compile ('com.ridemetric:ridemetric-controlsdk:4.1.49') { exclude module: 'support-v4' }
 }
 
