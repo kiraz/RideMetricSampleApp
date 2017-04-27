@@ -3,6 +3,9 @@ This is a sample app uses RideMetric SDK and can be expanded to include specific
 
 # RideMetric SDK
 ## Changelog
+Version 4.1.49
+* Restoring ACRA settings to the previous configuration
+
 Version 4.1.48
 * Improved scoring
 * Extended purging policy - deleting the trip after synchronizing it with the cloud server
